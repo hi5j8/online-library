@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane fx:id="catalogViewContainer" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controllers.catalog.CatalogController">
+   <top>
+      <fx:include source="../topNav.fxml" />
+   </top>
+   <center>
+      <VBox BorderPane.alignment="CENTER">
+         <BorderPane.margin>
+            <Insets left="200.0" right="200.0" top="50.0" />
+         </BorderPane.margin>
+         <children>
+            <Label text="Books">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <TableView fx:id="catalogBooks" prefHeight="600.0" prefWidth="880.0">
+              <columns>
+                <TableColumn fx:id="colBookTitle" minWidth="200.0" prefWidth="-1.0" text="Title" />
+                  <TableColumn fx:id="colBookAuthors" minWidth="100.0" prefWidth="-1.0" text="Written by" />
+                  <TableColumn fx:id="colBookPublishers" minWidth="100.0" prefWidth="-1.0" text="Published by" />
+                  <TableColumn fx:id="colBookGenres" minWidth="100.0" prefWidth="-1.0" text="Genres" />
+                <TableColumn fx:id="colBookReleaseDate" minWidth="100.0" prefWidth="-1.0" text="Release Date" />
+                  <TableColumn fx:id="colBookAvailable" minWidth="100.0" prefWidth="-1.0" text="Availability" />
+                  <TableColumn fx:id="colBookBorrwed" minWidth="100.0" prefWidth="-1.0" text="Borrowed" />
+                  <TableColumn fx:id="colBookAddToWatchlist" minWidth="69.0" prefWidth="79.0" text="Watchlist" />
+              </columns>
+               <VBox.margin>
+                  <Insets top="20.0" />
+               </VBox.margin>
+            </TableView>
+         </children>
+      </VBox>
+   </center>
+</BorderPane>

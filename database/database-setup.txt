@@ -1,0 +1,48 @@
+(This installation is for Windows)
+
+1. Download MySQL, latest version (8.0.20):
+	
+	- https://dev.mysql.com/downloads/installer/
+	- Installation Type: Developer Default
+
+2. If stuff fails, restart the installer and make sure the following features get installed:
+
+	- MySQL Server 8.0.20
+	- Connector/J 8.0.20
+	- (optional) MySQL Documentation 8.0.20
+	- MySQL workbench 8.0.20
+
+3. Configure MySQL server (in the installer):
+
+	3.1. Config Type: Development Computer
+	3.2. Connectivity - TCP/IP
+		- Port: 3306
+		- X Protocol Port: 33060
+		- Open Windows Firewall ports for network access: checked
+	3.3. root account
+		- MySQL root password: 'root'
+	3.4. MySQL User Accounts
+		- add user
+		- user name: 'gc'
+		- role: DB Admin
+		- password: 'root'
+		
+4. Import Database Schema:
+
+	- In MySQL workbench, go to "Server - Data Import"
+	- Select "Import from Self-Contained File"
+	- select .sql file from repo
+	- Default target schema: leave blank
+	- start import
+	- open the 'Schemas' tab on the left, rightclick in schema list and select 'refresh'
+	- Imported database should now appear
+	
+5. Exporting the database to push with the GitLab repo:
+
+	- In MySQL workbench, go to "Server - Data Export"
+	- Select the 'online-library' schema
+	- select "Export to Self-Contained File"
+	- export as "online-library.sql"
+	- select "Include Create Schema"
+	- start export
+	

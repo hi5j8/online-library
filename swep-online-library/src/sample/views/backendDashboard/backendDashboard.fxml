@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane fx:id="userDashboardContainer" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controllers.backendDashboard.BackendDashboardController">
+    <top>
+        <fx:include source="../topNav.fxml" />
+    </top>
+   <left>
+      <VBox prefWidth="300.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label text="Backend menu">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </Label>
+            <Hyperlink onAction="#showDashboardOverview" text="dashboard overview">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Hyperlink>
+            <Label text="Accounts">
+               <font>
+                  <Font size="20.0" />
+               </font>
+               <padding>
+                  <Insets top="20.0" />
+               </padding>
+            </Label>
+            <Hyperlink disable="true" text="show user list">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Hyperlink>
+            <Hyperlink disable="true" text="show borrow list">
+               <font>
+                  <Font size="16.0" />
+               </font></Hyperlink>
+            <Hyperlink disable="true" text="user memberships">
+               <font>
+                  <Font size="16.0" />
+               </font></Hyperlink>
+            <Hyperlink disable="true" layoutX="40.0" layoutY="234.0" text="requested for deletion">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Hyperlink>
+            <Label text="Media">
+               <font>
+                  <Font size="20.0" />
+               </font>
+               <padding>
+                  <Insets top="20.0" />
+               </padding>
+            </Label>
+            <Hyperlink disable="true" text="show media list">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Hyperlink>
+            <Hyperlink onAction="#showAddNewBookMenu" text="add new book">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Hyperlink>
+         </children>
+         <padding>
+            <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+         </padding>
+      </VBox>
+   </left>
+   <center>
+      <Pane fx:id="dashboardWidgetContainer" BorderPane.alignment="CENTER">
+         <children>
+            <Pane fx:id="addNewMediaContainer" minHeight="500.0" minWidth="500.0">
+               <children>
+                  <fx:include source="widgets/addNewBook.fxml" />
+               </children>
+            </Pane>
+            <Pane fx:id="widgetContainer2" />
+         </children></Pane>
+   </center>
+</BorderPane>

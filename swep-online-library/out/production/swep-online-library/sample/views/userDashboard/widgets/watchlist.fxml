@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="670.0" prefWidth="980.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controllers.userDashboard.widgets.WatchlistController">
+   <center>
+      <VBox alignment="CENTER" fillWidth="false" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label text="Your watchlist">
+               <font>
+                  <Font size="20.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="20.0" />
+               </VBox.margin>
+            </Label>
+            <TableView fx:id="watchlist" prefHeight="400.0" prefWidth="700.0">
+              <columns>
+                <TableColumn fx:id="colTitle" prefWidth="230.0" text="Title" />
+                <TableColumn fx:id="colReleaseDate" minWidth="0.0" prefWidth="156.0" text="Release date" />
+                  <TableColumn fx:id="colAvailable" prefWidth="134.0" text="Available" />
+                  <TableColumn fx:id="colBorrowed" prefWidth="107.0" text="Borrowed" />
+                  <TableColumn fx:id="colRemove" prefWidth="72.0" text="Remove" />
+              </columns>
+            </TableView>
+         </children>
+      </VBox>
+   </center>
+</BorderPane>
